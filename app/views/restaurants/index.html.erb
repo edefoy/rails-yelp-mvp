@@ -1,0 +1,32 @@
+<h1>Welcome to Gusto</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Restaurants</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Category</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @restaurants.each do |restaurant| %>
+            <tr>
+              <td><%= restaurant.name %></td>
+              <td><%= restaurant.address %></td>
+              <td><%= restaurant.phone_number %></td>
+              <td><%= restaurant.category %></td>
+              <td><%= link_to "Show reviews", restaurant_path(restaurant), class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
